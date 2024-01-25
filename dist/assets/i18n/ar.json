@@ -1,0 +1,41 @@
+{
+	"0": "0",
+	"Add Profile": "إضافة مستخدم",
+	"Add to my list": "إضافة الى قائمتى",
+	"Arabic": "اللغة العربية",
+	"Are you sure you want to change language? the app will be reloaded": {
+		"": "هل تريد تغير اللغه؟ سيتم اعادة تحميل التطبيق."
+	},
+	"Are you sure!": "هل انت متأكد!",
+	"Delete Profile": "مسح الملف",
+	"Edit Profile": "تعديل المستخدم",
+	"English": "English",
+	"Enter Profile Name": "ادخل اسم الملف",
+	"Enter your name": "ادخل اسمك",
+	"Home": "الرئيسية",
+	"Kid Mode": "وضع الطفل",
+	"Language": "اختر اللغة",
+	"Left": "متبقى",
+	"Live TV": "البث المباشر",
+	"Loading": {
+		"": {
+			"": {
+				"": "الرجاء الانتظار..."
+			}
+		}
+	},
+	"More Episodes": "المزيد من الحلقات",
+	"Movies": "الأفلام",
+	"My List": "قائمتي",
+	"NO": "لا",
+	"Please Select a picture": "قم بإختيار شخصية",
+	"Profile Management": "إدارة الملف الشخصى",
+	"Remove to my list": "حذف من المفضلة",
+	"Save": "حفظ",
+	"Search": "البحث",
+	"Series": "المسلسلات",
+	"Settings": "الضبط",
+	"Start from beginning": "البدء من البداية",
+	"Who's watching ?": "من يشاهد ؟",
+	"YES": "نعم"
+}

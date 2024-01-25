@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32.896" height="33.418" viewBox="0 0 32.896 33.418">
+  <g id="Small-radio" transform="translate(0.25 0.25)">
+    <path id="Path_62312" data-name="Path 62312" d="M26.4,12.018H8.039l9.039-9.039a1.551,1.551,0,0,0,.672.157,1.567,1.567,0,1,0-1.567-1.567,1.552,1.552,0,0,0,.157.672l-9.8,9.8a6.519,6.519,0,0,0-6.03,6.5v7.848a6.52,6.52,0,0,0,6.5,6.526H26.4a6.52,6.52,0,0,0,6.5-6.526V18.544A6.52,6.52,0,0,0,26.4,12.018Zm5.453,14.374A5.474,5.474,0,0,1,26.4,31.873H7.006a5.474,5.474,0,0,1-5.453-5.481V18.544a5.474,5.474,0,0,1,5.453-5.481H26.4a5.474,5.474,0,0,1,5.453,5.481Z" transform="translate(-0.507)" fill="#fff" stroke="#fff" stroke-width="0.5"/>
+    <circle id="Ellipse_49" data-name="Ellipse 49" cx="1.568" cy="1.568" r="1.568" transform="translate(25.039 20.942)" fill="#fff" stroke="#fff" stroke-width="0.5"/>
+    <circle id="Ellipse_50" data-name="Ellipse 50" cx="1.567" cy="1.567" r="1.567" transform="translate(25.039 16.239)" fill="#fff" stroke="#fff" stroke-width="0.5"/>
+    <g id="Rectangle_12949" data-name="Rectangle 12949" transform="translate(3.621 14.059)" fill="none" stroke="#fff" stroke-width="1">
+      <rect width="19.837" height="16.785" rx="3" stroke="none"/>
+      <rect x="0.5" y="0.5" width="18.837" height="15.785" rx="2.5" fill="none"/>
+    </g>
+  </g>
+</svg>
