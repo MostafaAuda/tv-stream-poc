@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widget xmlns:tizen="http://tizen.org/ns/widgets" xmlns="http://www.w3.org/ns/widgets" id="http://etisalat.eg/EtisalatTV" version="1.0.0" viewmodes="fullscreen">
+    <access origin="https://wallpaperaccess.com" subdomains="true"/>
+    <access origin="https://i.pinimg.com" subdomains="true"/>
+    <access origin="https://cdn.shopify.com" subdomains="true"/>
+    <access origin="https://storage.googleapis.com" subdomains="true"/>
+    <access origin="https://movieposters2.com" subdomains="true"/>
+    <access origin="https://occ-0-2774-2773.1.nflxso.net" subdomains="true"/>
+    <access origin="http://commondatastorage.googleapis.com" subdomains="true"/>
+    <access origin="https://i.pinimg.com" subdomains="true"/>
+    <access origin="https://www.pngkit.com" subdomains="true"/>
+    <tizen:application id="27VXFRSbNa.EtisalatTV" package="27VXFRSbNa" required_version="3.0"/>
+    <content src="index.html"/>
+    <feature name="http://tizen.org/feature/screen.size.normal.1080.1920"/>
+    <feature name="http://www.samsungdforum.com/feature/Keyboard"/>
+    <feature name="http://www.samsungdforum.com/feature/Mouse"/>
+    <icon src="icon.png"/>
+    <name>EtisalatTV</name>
+    <tizen:privilege name="http://developer.samsung.com/privilege/contentsdownload"/>
+    <tizen:privilege name="http://developer.samsung.com/privilege/network.public"/>
+    <tizen:privilege name="http://developer.samsung.com/privilege/productinfo"/>
+    <tizen:profile name="tv-samsung"/>
+    <tizen:setting screen-orientation="landscape" context-menu="enable" background-support="disable" encryption="disable" install-location="auto" hwkey-event="enable"/>
+</widget>

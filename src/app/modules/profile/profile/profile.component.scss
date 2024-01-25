@@ -1,0 +1,130 @@
+.profile-container {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)),
+    url('https://wallpaperaccess.com/full/1512225.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 5vw;
+
+  .profile__header {
+    margin-bottom: 10vh;
+
+    img {
+      height: 6vh;
+    }
+
+    div {
+      font-weight: bold;
+
+      &.focused {
+        color: var(--primary);
+      }
+    }
+  }
+
+  h4 {
+    text-align: center;
+    margin-bottom: 5vh;
+  }
+
+  .profile {
+    margin: 0 2vw;
+
+    .profile-image {
+      width: 12vw;
+      height: 21.333vh;
+      border-radius: 50%;
+      margin-bottom: 2vh;
+      padding: 0.5vw;
+      position: relative;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 50%;
+      }
+
+      .overlay {
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+        background-color: var(--black);
+        opacity: .8;
+        border-radius: 50%;
+        align-items: center;
+        justify-content: center;
+        display: none;
+
+        &.overlay__edit {
+          display: flex;
+        }
+
+        svg {
+          height: 5vh;
+        }
+      }
+    }
+
+    h5 {
+      text-align: center;
+      font-weight: bold;
+    }
+
+    &.focused {
+      .profile-image {
+        border: 0.2vw solid var(--primary);
+      }
+
+      h5 {
+        color: var(--primary);
+      }
+    }
+  }
+
+  .profile__actions {
+    margin: 15vh auto 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    .actions__done {
+      font-weight: bold;
+      border: 0.2vw solid var(--white);
+      border-radius: 1vw;
+      width: 25vw;
+      text-align: center;
+      height: 7vh;
+
+      &.focused {
+        background-color: var(--accent);
+        border-color: var(--accent);
+      }
+    }
+
+    .play___something {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: auto;
+      font-weight: bold;
+      border: 0.2vw solid white;
+      border-radius: 1vw;
+      padding: 0.2vh 4vw;
+  
+      img {
+        height: 5vh;
+        margin-inline-end: 1vw;
+      }
+    }
+  }
+
+}

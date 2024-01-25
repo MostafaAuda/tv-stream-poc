@@ -1,0 +1,19 @@
+<router-outlet></router-outlet>
+
+<ngx-spinner
+  bdColor="rgba(0, 0, 0, 1)"
+  template="<img style='width: 100vw; height: 100vh; object-fit: contain;' src='assets/images/newsplash1.gif'/>"
+  name="fullScreen"
+>
+</ngx-spinner>
+
+<ngx-spinner
+  bdColor="rgba(0, 0, 0, 0.8)"
+  size="large"
+  color="#fff"
+  type="timer"
+  [fullScreen]="true"
+  name="default"
+>
+  <p style="color: white">{{ 'Loading...' | translate }}</p>
+</ngx-spinner>

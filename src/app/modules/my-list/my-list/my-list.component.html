@@ -1,0 +1,18 @@
+<section class="my-list">
+  <div class="card__container">
+    <div #cardsContainer class="cards-wrapper" 
+      [style.transform]="'translateY(' + cardsContainerTranslate + 'vh)'" 
+      *ngIf="cards_data.length else noCardFound">
+        <div #card class="custom-card movie-card shadow-sm" *ngFor="let card of cards_data" (click)="goToVideo(card.id, card.type)">
+          <img src="{{ card.image }}" alt="Image" loading="lazy" />
+        </div>
+    </div>
+    
+    <ng-template #noCardFound>
+      <h1 class="empty-list">
+        Your list is empty!
+      </h1>
+    </ng-template>
+    
+  </div>
+</section>

@@ -1,0 +1,8 @@
+<section class="settings-container">
+  <h5>{{"Language" | translate}}</h5>
+  <div #languageContainer class="language-container">
+    <div class="language" (click)="changeLang('en')">{{"English" | translate}}</div>
+    <div class="language" (click)="changeLang('ar')">{{"Arabic" | translate}}</div>
+  </div>
+</section>
+<app-confirmation-dialog></app-confirmation-dialog>

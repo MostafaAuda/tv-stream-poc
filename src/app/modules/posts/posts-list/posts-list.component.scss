@@ -1,0 +1,220 @@
+.info {
+  position: relative;
+  overflow: hidden;
+  height: 75vh;
+
+  .info__background {
+    position: absolute;
+    height: 100%;
+    right: 0;
+    width: 65vw;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      bottom: 0;
+      z-index: 1;
+      opacity: 1;
+      transition: opacity 1s linear;
+
+      &.hide { 
+        opacity: 0;
+      }
+    }
+
+    .video-js {
+      width: 100%;
+      height: 100%;
+      
+      video {
+        object-fit: cover;
+      }
+    }
+  }
+
+  .info__vertical-overlay {
+    position: absolute;
+    width: 50vw;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: linear-gradient(90deg, var(--dark-bg) 60%, rgba(18, 18, 18, 0) 100%);
+    z-index: 2;
+  }
+
+  .info__horizontal-overlay {
+    position: absolute;
+    width: 100%;
+    right: 0;
+    left: 0;
+    height: 30vh;
+    bottom: 0;
+    background: linear-gradient(0deg, var(--dark-bg) 2vh, rgba(18, 18, 18, 0) 100%);
+    z-index: 2;
+  }
+
+  .info__container {
+    position: absolute;
+    z-index: 3;
+    width: 40vw;
+    height: 50vh;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: transparent;
+
+    img {
+      width: auto;
+      height: 18vh;
+      margin: 1vh 0;
+      margin-inline-start: -1vw;
+    }
+
+    .info__container__tags {
+      display: flex;
+      align-items: center;
+      margin-bottom: 2vh;
+
+      span {
+        margin-inline-end: 1vw;
+        font-weight: bold;
+
+        &.rating {
+          background-color: var(--light-bg);
+          padding: 0.2vh 0.3vw;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: 0.2vw;
+          box-shadow: 0 0.125rem 0.25rem rgb(0 0 0 / 8%);
+        }
+
+        &.quality {
+          padding: 0.2vh 0.3vw;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: 0.2vw;
+          border: 0.1vw dashed var(--lighter-bg);
+          box-shadow: 0 0.125rem 0.25rem rgb(0 0 0 / 8%);
+        }
+
+        &.category {
+          padding: 0.2vh 0.3vw;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: 0.2vw;
+          border: 0.1vw solid var(--lighter-bg);
+          box-shadow: 0 0.125rem 0.25rem rgb(0 0 0 / 8%);
+        }
+      }
+    }
+
+    .info__container__category {
+      h6 {
+        font-weight: bold;
+        position: relative;
+        display: flex;
+        align-items: center;
+        padding-inline-start: 1vw;
+        margin-bottom: 2vh;
+        color: var(--primary);
+
+        &::before {
+          content: '';
+          position: absolute;
+          top: 60%;
+          left: 0;
+          transform: translateY(-50%);
+          border-radius: 50%;
+          width: 0.5vw;
+          height: 1vh;
+          background-color: var(--primary);
+        }
+      }
+    }
+
+    p {
+      text-align: justify;
+    }
+
+    .info__container__play-more {
+      display: flex;
+
+      span {
+        border: 0.1vw solid var(--white);
+        border-radius: 0.4vw;
+        width: 10vw;
+        padding: 1vh 1vw;
+        text-align: center;
+        font-weight: bold;
+
+        &:nth-child(1) {
+          margin-inline-end: 1vw;
+        }
+
+        &.focused {
+          background-color: var(--white);
+          border: unset;
+          color: var(--accent);
+        }
+      }
+    }
+  }
+}
+
+.swiper__container {
+  position: absolute;
+  height: 50vh;
+  right: 0;
+  left: 5vw;
+  bottom: 0;
+  z-index: 3;
+}
+
+.vertical-slider {
+  position: relative;
+  overflow: hidden;
+
+  .vertical__slider-wrapper {
+    display: flex;
+    flex-direction: column;
+    transition: transform .3s cubic-bezier(.5,0,.1,.7) 0s;
+  }
+}
+
+.horizontal-slider {
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 2vh;
+
+  h5 {
+    height: 5vh;
+  }
+
+  .horizontal__slider-wrapper {
+    display: flex;
+    transition: transform .3s cubic-bezier(.5,0,.1,.7) 0s;
+
+    .slider-slide {
+      position: relative;
+      border-radius: 0.2vw;
+      flex-basis: 13vw;
+      flex-shrink: 0;
+      height: 34vh;
+      margin-inline-end: 1vw;
+    }
+  }
+}
+
+.focused {
+  border: 0.25vw solid var(--white);
+  border-radius: 0.2vw;
+}

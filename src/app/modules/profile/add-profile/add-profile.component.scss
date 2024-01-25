@@ -1,0 +1,263 @@
+.add-profile-container {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)),
+    url('https://wallpaperaccess.com/full/1512225.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 5vw;
+
+  .profile__header {
+    margin-bottom: 10vh;
+
+    img {
+      height: 6vh;
+    }
+
+    div {
+      font-weight: bold;
+
+      &.focused {
+        color: var(--primary);
+      }
+    }
+  }
+
+  .add-profile-container__profile {
+
+    display: flex;
+
+    .profile__container {
+
+      flex-basis: 50vw;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      height: 75vw;
+
+      h4 {
+        margin-bottom: 3vh;
+      }
+
+      .profile-image {
+        width: 12vw;
+        height: 21.333vh;
+        border-radius: 50%;
+        margin-bottom: 5vh;
+        position: relative;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          border-radius: 50%;
+        }
+
+        .overlay {
+          position: absolute;
+          top: 0;
+          right: 0;
+          left: 0;
+          bottom: 0;
+          z-index: 1;
+          width: 100%;
+          height: 100%;
+          background-color: var(--black);
+          opacity: .8;
+          border-radius: 50%;
+          align-items: center;
+          justify-content: center;
+          border: 0.2vw solid var(--primary);
+          display: none;
+
+          svg {
+            height: 5vh;
+          }
+        }
+
+        &.focused {
+          .overlay {
+            display: flex;
+          }
+        }
+      }
+  
+      .profile-name {
+        border: 0.1vw solid var(--white);
+        border-radius: 0.4vw;
+        width: 21vw;
+        padding: 1vh 1vw;
+        margin-bottom: 3vh;
+        height: 5.56vh;
+      }
+
+      .profile-language {
+        display: flex;
+
+        span {
+          border: 0.1vw solid var(--white);
+          border-radius: 0.4vw;
+          width: 10vw;
+          padding: 1vh 1vw;
+          text-align: center;
+
+          &:nth-child(1) {
+            margin-inline-end: 1vw;
+          }
+
+          &.active {
+            background-color: var(--white);
+            color: var(--lighter-bg);
+          }
+
+          &.focused {
+            background-color: var(--accent);
+            border: unset;
+            color: var(--white);
+            font-weight: bold;
+          }
+        }
+      }
+
+      .profile-mode {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: var(--lighter-bg);
+        width: 21vw;
+        padding: 1vh 1vw;
+        margin-bottom: 3vh;
+        border-radius: 0.4vw;
+        height: 5.56vh;
+
+        .form-check-input {
+
+          border-color: var(--lighter-bg)!important;
+          outline: 0!important;
+          box-shadow: unset!important;
+          
+          &:focus {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='rgba%280, 0, 0, 0.25%29'/%3e%3c/svg%3e");
+          }
+
+          &:checked {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23fff'/%3e%3c/svg%3e");
+            background-color: var(--primary);
+          }
+        }
+
+        &.focused {
+          border: 0.2vw solid var(--white);
+        }
+      }
+
+      .profile-submit {
+        background-color: var(--white);
+        width: 19.6vw;
+        padding: 1vh 1vw;
+        margin-bottom: 4vh;
+        border-radius: 0.4vw;
+        text-align: center;
+        margin-top: 2vh;
+        color: var(--lighter-bg);
+
+        &.focused {
+          background-color: var(--accent);
+          color: var(--white);
+          font-weight: bold;
+        }
+      }
+
+      .profile-delete {
+        background-color: var(--warn);
+        width: 19.6vw;
+        padding: 1vh 1vw;
+        margin-bottom: 2vh;
+        border-radius: 0.4vw;
+        text-align: center;
+        color: var(--white);
+
+        &.focused {
+          background-color: var(--accent);
+          color: var(--white);
+          font-weight: bold;
+        }
+      }
+
+    }
+  }
+}
+
+.keyboard__container {
+  width: 20vw;
+
+  .keyboard {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+
+    .key {
+      flex-grow: 1;
+      flex-basis: 2.9vw;
+      height: 2.935vw;
+      background-color: var(--lighter-bg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 0.2vw;
+      box-shadow: 0 0.125rem 0.25rem rgb(0 0 0 / 8%);
+      margin: 0.2vw;
+
+      &.focused {
+        color: var(--lighter-bg);
+        background-color: var(--white);
+      }
+    }
+  }
+
+  .keyboard__actions {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+
+    .action {
+      flex-basis: 2.9vw;
+      width: 2.9vw;
+      height: 2.935vw;
+      background-color: var(--lighter-bg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 0.2vw;
+      box-shadow: 0 0.125rem 0.25rem rgb(0 0 0 / 8%);
+      margin: 0.2vw;
+
+      &.action--space {
+        flex-grow: 1;
+
+        svg {
+          width: 20%;
+          fill: var(--white);
+        }
+      }
+
+      &.action--delete {
+        svg {
+          height: 60%;
+          fill: var(--white);
+        }
+      }
+
+      &.focused {
+        color: var(--lighter-bg);
+        background-color: var(--white);
+
+        svg {
+          fill: var(--lighter-bg);
+        }
+      }
+    }
+  }
+}

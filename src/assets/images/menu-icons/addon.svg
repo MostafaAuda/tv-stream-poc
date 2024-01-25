@@ -1,0 +1,10 @@
+<svg id="Component_8_1" data-name="Component 8 – 1" xmlns="http://www.w3.org/2000/svg" width="26.839" height="30" viewBox="0 0 26.839 30">
+  <g id="XMLID_5_" transform="translate(0 1.951)">
+    <g id="Group_42626" data-name="Group 42626">
+      <g id="Group_42625" data-name="Group 42625">
+        <path id="Path_62309" data-name="Path 62309" d="M13.42,26.839a13.42,13.42,0,1,1,13.42-13.42A13.459,13.459,0,0,1,13.42,26.839Zm0-25.162A11.742,11.742,0,1,0,25.162,13.42,11.777,11.777,0,0,0,13.42,1.677Z" fill="#fff"/>
+      </g>
+    </g>
+  </g>
+  <text id="_" data-name="+" transform="translate(6.881 24)" fill="#fff" font-size="25" font-family="PublicSans-Regular, Public Sans"><tspan x="0" y="0">+</tspan></text>
+</svg>

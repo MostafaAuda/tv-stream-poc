@@ -1,0 +1,97 @@
+.login-container {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)),
+    url('https://wallpaperaccess.com/full/1512225.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  .login__logo {
+    padding: 5vh 5vw 5vh;
+
+    img {
+      height: 6vh;
+    }
+  }
+
+  .login__barcode {
+    width: 50vw;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    height: 70vh;
+    padding: 5vh 0;
+
+    img {
+      width: 20vw;
+      margin-top: 5vh;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 0.1vw;
+      height: 100%;
+      background-color: white;
+    }
+
+    &::before {
+      content: 'OR';
+      position: absolute;
+      top: 50%;
+      right: -1.5vw;
+      background-color: black;
+      color: white;
+      border-radius: 50%;
+      width: 3vw;
+      height: 3vw;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      z-index: 1;
+      transform: translateY(-50%);
+    }
+  }
+
+  .login__info {
+    width: 50vw;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    height: 70vh;
+    padding: 5vh 0;
+    justify-content: center;
+
+    * {
+      margin-bottom: 3vh;
+    }
+
+    h1 {
+      color: var(--accent);
+    }
+
+    .button {
+      border: 0.2vw solid var(--accent);
+      border-radius: 1vw;
+      padding: 0.1vh 4vw;
+      font-weight: bold;
+
+      &:nth-child(1) {
+        margin-inline-end: 1vw;
+      }
+
+      &.focused {
+        color: white;
+        background-color: var(--accent);
+      }
+    }
+  }
+}

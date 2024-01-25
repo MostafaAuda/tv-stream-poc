@@ -1,0 +1,79 @@
+<section class="info">
+  <div class="info__vertical-overlay"></div>
+  <div class="info__horizontal-overlay"></div>
+
+  <div class="info__background">
+    <img [ngClass]="{'hide': is_previewPlaying}" src="{{videoData?.background}}" alt="Video background" *ngIf="videoData?.background">
+    <video #videoJS class="video-js" playsinline>
+      <p class="vjs-no-js">
+        To view this video please enable JavaScript, and consider upgrading to a web
+        browser that
+        <a href="http://videojs.com/html5-video-support/" target="_blank"
+          >supports HTML5 video</a
+        >
+      </p>
+    </video>
+  </div>
+  <div class="info__container">
+    <img
+      src="{{videoData?.logo}}"
+      alt="Spider Man"
+      *ngIf="videoData?.logo"
+    />
+    <div class="info__container__tags">
+      <span class="years" *ngIf="videoData?.year"> {{videoData?.year}} </span>
+
+      <span class="rating" *ngIf="videoData?.adult_rate"> {{videoData?.adult_rate}} </span>
+
+      <span class="duration" *ngIf="videoData?.length"> {{videoData?.length}} </span>
+
+      <span class="duration" *ngIf="videoData?.total_seasons"> {{videoData?.total_seasons}} </span>
+
+      <span class="quality" *ngIf="videoData?.resolution"> {{videoData?.resolution}} </span>
+
+      <span class="category" *ngFor="let category of videoData?.categories"> {{category}} </span>
+    </div>
+
+    <div class="info__container__category" *ngIf="videoData?.flag">
+      <h6>{{videoData?.flag}}</h6>
+    </div>
+
+    <p *ngIf="videoData?.description">
+      {{videoData?.description}}
+    </p>
+
+    <!-- <div class="info__container__play-more">
+      <span>Play</span>
+      <span>More</span>
+    </div> -->
+  </div>
+</section>
+
+<section class="swiper__container">
+  <div class="vertical-slider">
+    <div
+      class="vertical__slider-wrapper"
+      [style.transform]="'translateY(' + verticalTranslate + 'vh)'"
+    >
+      <div
+        #horizontalSlider
+        class="horizontal-slider"
+        *ngFor="let category of homeResponse"
+        [attr.cardIndex]="0"
+        [attr.translate]="0"
+      >
+        <h5>
+          {{ category.category_name }}
+        </h5>
+
+        <div class="horizontal__slider-wrapper">
+          <div class="slider-slide movie-card shadow-sm" *ngFor="let card of category.category_cards" (click)="goToVideo(card.id, card.type)">
+            <img *ngIf="card.logo" class="logo" src="{{card.logo}}" alt="Shuffle Logo">
+            <div *ngIf="card.tag" class="new_epi fs-2">{{card.tag}}</div>
+            <img class="shadow-sm" src="{{card.image}}" alt="Video Image" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

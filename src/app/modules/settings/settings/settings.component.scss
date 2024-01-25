@@ -1,0 +1,30 @@
+.settings-container {
+  position: relative;
+  overflow: hidden;
+  height: 100vh;
+  padding-top: 5vh;
+
+  h5 {
+    margin-bottom: 1vh;
+  }
+
+  .language-container {
+    display: flex;
+  }
+
+  .language {
+    background-color: var(--lighter-bg);
+    padding: 0.5vh 0;
+    width: 10vw;
+    text-align: center;
+
+    &:nth-child(1) {
+      margin-inline-end: 0.5vw;
+    }
+  }
+
+  .focused {
+    background-color: var(--white);
+    color: var(--lighter-bg);
+  }
+}

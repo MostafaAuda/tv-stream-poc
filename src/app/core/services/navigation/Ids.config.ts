@@ -1,0 +1,22 @@
+export const VIEWS_IDS = {
+  MENU: 0,
+  HOME: 1,
+  SEARCH: 2,
+  SETTINGS: 3,
+  VIDEO_MOVIE: 4,
+  LOGIN: 5,
+  PROFILE: 6,
+  VIDEO_DESC: 7,
+  MY_LIST: 8,
+  SUBTITLE_MODAL: 9,
+  ADD_PROFILE: 10,
+  CONFIRMATION_MODAL: 11,
+  CHANGE_PICTURE_MODAL: 12,
+  MOVIES: 13,
+  SERIES: 14,
+};
+
+export const MODALS_NAMES = {
+  SUBTITLE_MODAL: 'changeSubtitle',
+  CHANGE_PICTURE_MODAL: 'changePicture',
+};

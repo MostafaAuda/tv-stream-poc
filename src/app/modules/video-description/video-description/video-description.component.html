@@ -1,0 +1,134 @@
+<section class="video-description" *ngIf="videoData">
+  <img class="video-description__background" src="{{videoData.background}}" alt="Video description background">
+  <div class="video-description__overlay"></div>
+
+  <div class="video-description__container">
+    <div class="description">
+      <img
+        src="{{videoData?.logo}}"
+        alt="Spider Man"
+      />
+      <div class="description__tags">
+        <span class="years" *ngIf="videoData?.year"> {{videoData?.year}} </span>
+
+        <span class="rating" *ngIf="videoData?.adult_rate"> {{videoData?.adult_rate}} </span>
+
+        <span class="duration" *ngIf="videoData?.length"> {{videoData?.length}} </span>
+  
+        <span class="duration" *ngIf="videoData?.total_seasons"> {{videoData?.total_seasons}} </span>
+  
+        <span class="quality" *ngIf="videoData?.resolution"> {{videoData?.resolution}} </span>
+  
+        <span class="category" *ngFor="let category of videoData?.categories"> {{category}} </span>
+      </div>
+  
+      <p *ngIf="videoData?.description">
+        {{videoData?.description}}
+      </p>
+
+      <div class="imdb" *ngIf="videoData?.imdb_rate">
+        <div class="logo">IMDb</div>
+        <div>
+          <span class="fl-6">{{videoData?.imdb_rate}}</span>
+          <span>/10</span>
+        </div>
+      </div>
+    </div>
+
+    <div #actionsParent class="description-actions">
+      <div class="description-actions__action" (click)="goToVideoPlayer(videoData.id, videoData.type)">
+        <svg viewBox="-3 0 25 25" fill="white">
+          <path
+            d="M3 2.69127C3 1.93067 3.81547 1.44851 4.48192 1.81506L21.4069 11.1238C22.0977 11.5037 22.0977 12.4963 21.4069 12.8762L4.48192 22.1849C3.81546 22.5515 3 22.0693 3 21.3087V2.69127Z"
+          ></path>
+        </svg>
+        <div class="action__play">
+          <span class="fl-6 action__name" *ngIf="videoData?.current_state?.season">
+            Season{{videoData?.current_state.season}}: Episode.{{videoData?.current_state.episode}}
+          </span>
+          <div class="play__progress" *ngIf="videoData?.current_state?.current_time">
+            <ngb-progressbar value="{{videoData?.current_state.current_time}}"></ngb-progressbar>
+            <span>{{videoData?.current_state.time_left}} {{"Left" | translate}}</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="description-actions__action" (click)="toggleEpisodes()" *ngIf="videoType == 'series'">
+        <svg viewBox="-1 1 21 21">
+          <g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round"
+            transform="translate(1 4)">
+            <path
+              d="m13.5 12.5v-6c0-1.1045695-.8954305-2-2-2h-9c-1.1045695 0-2 .8954305-2 2v6c0 1.1045695.8954305 2 2 2h9c1.1045695 0 2-.8954305 2-2z" />
+            <path
+              d="m15.5 12.5v-6.99481259c0-1.65685425-1.3431458-3-3-3-.0017276 0-.0034553 0-.0051829 0l-8.9948171.01554432" />
+            <path d="m17.5 10.5v-5.99308345c0-2.209139-1.790861-4-4-4-.0023035 0-.004607 0-.0069106 0l-7.9930894.01381519" />
+          </g>
+        </svg>
+        <span class="fl-6 action__name">
+          {{"More Episodes" | translate}}
+        </span>
+      </div>
+
+      <div class="description-actions__action" (click)="addToMyList(videoData.id)">
+        <svg viewBox="0 0 52 52" fill="white">
+          <path d="M30,29h16.5c0.8,0,1.5-0.7,1.5-1.5v-3c0-0.8-0.7-1.5-1.5-1.5H30c-0.6,0-1-0.4-1-1V5.5C29,4.7,28.3,4,27.5,4
+            h-3C23.7,4,23,4.7,23,5.5V22c0,0.6-0.4,1-1,1H5.5C4.7,23,4,23.7,4,24.5v3C4,28.3,4.7,29,5.5,29H22c0.6,0,1,0.4,1,1v16.5
+            c0,0.8,0.7,1.5,1.5,1.5h3c0.8,0,1.5-0.7,1.5-1.5V30C29,29.4,29.4,29,30,29z" />
+        </svg>
+        <span class="fl-6 action__name">
+          {{is_inList? ('Remove to my list' | translate) : ('Add to my list' | translate)}}
+        </span>
+      </div>
+
+      <div class="description-actions__action" (click)="goToVideoPlayer()">
+        <svg viewBox="0 1 22 22" fill="white">
+          <path
+            d="M21.8,10.71a1,1,0,0,0-1.41.09h0a9.31,9.31,0,0,0-1.26-3.7A9.11,9.11,0,0,0,13.4,2.94,9.22,9.22,0,0,0,6.33,4.1,9.49,9.49,0,0,0,3.2,17a9.12,9.12,0,0,0,5.71,4.18A9.27,9.27,0,0,0,16,20a9.45,9.45,0,0,0,2.42-2.17,1,1,0,0,0-.16-1.4,1,1,0,0,0-1.41.16,7.37,7.37,0,0,1-7.45,2.63A7.12,7.12,0,0,1,4.92,16,7.47,7.47,0,0,1,7.39,5.8a7.29,7.29,0,0,1,5.55-.92A7.15,7.15,0,0,1,17.4,8.15a7.38,7.38,0,0,1,1,3.29l-.55-.5a1,1,0,0,0-1.42.08,1,1,0,0,0,.08,1.41l2.09,1.87h0l.06,0,.14.08s.07.06.11.07l.1,0,.06,0h.19l.1,0a.78.78,0,0,0,.21,0l.1,0s0,0,.07-.05l.18-.13s.06,0,.09-.07h0l1.85-2.09A1,1,0,0,0,21.8,10.71Z"
+          />
+        </svg>
+        <span class="fl-6 action__name">
+          {{"Start from beginning" | translate}}
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <div class="video-description__episodes" [ngClass]="{'show': is_episodesShowen}">
+    <div class="horizontal-slider">
+      <div class="horizontal__slider-wrapper" [style.transform]="'translateX(' + horizontalTranslate + 'vw)'">
+
+        <div #verticalSlider [attr.cardIndex]="0" [attr.translate]="0" class="veritcal-slider" *ngFor="let season of videoData.seasons">
+          <div class="veritcal__slider-wrapper">
+            <h5>
+              Season {{season.season_number}} ({{season.total_episodes}} Episodes)
+            </h5>
+            <div class="slider-slide" *ngFor="let episode of season.season_episodes">
+              <div class="slider-slide__thumbnail shadow" style="background-image: url({{episode.image}});">
+                <div class="thumbnail__data">
+                  <div class="data__top-info fl-6">
+                    <span>E{{episode.episode_number}}</span>
+                    <span>{{episode.length}}m</span>
+                  </div>
+                  <div>
+                    <span class="data__time-left">{{episode.time_left}}</span>
+                    <ngb-progressbar value="{{episode.current_time}}"></ngb-progressbar>
+                  </div>
+                </div>
+              </div>
+              <div class="slider-slide__meta">
+                <h6>
+                  {{episode.title}}
+                </h6>
+                <p>
+                  {{episode.description}}
+                </p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>

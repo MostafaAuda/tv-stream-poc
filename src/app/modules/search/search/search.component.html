@@ -1,0 +1,75 @@
+<section class="search-container">
+  <div class="keyboard__container">
+    <div #keyboard class="keyboard fl-6">
+      <div
+        #key
+        class="key"
+        *ngFor="let key of !showArLang ? englishKeys : arabicKeys"
+        (click)="copyText(key)"
+      >
+        {{ key }}
+      </div>
+    </div>
+
+    <div #keyboardActions class="keyboard__actions fl-6">
+      <div class="action action--language" (click)="switchLang()">EN</div>
+      <div #spaceKey class="action action--space" (click)="addSpace()">
+        <svg viewBox="0 0 24 24">
+          <path
+            d="M21,9a1,1,0,0,0-1,1v3H4V10a1,1,0,0,0-2,0v4a1,1,0,0,0,1,1H21a1,1,0,0,0,1-1V10A1,1,0,0,0,21,9Z"
+          />
+        </svg>
+      </div>
+      <div class="action action--delete" (click)="deleteText()">
+        <svg viewBox="0 0 512.01 512.01">
+          <path
+            d="M490.677,64.005H133.088c-7.189,0-13.888,3.627-17.856,9.643L3.488,244.315c-4.651,7.104-4.651,16.277,0,23.381
+            l111.744,170.667c3.968,6.016,10.667,9.643,17.856,9.643h357.589c11.797,0,21.333-9.536,21.333-21.333V85.339
+            C512.011,73.541,502.475,64.005,490.677,64.005z M399.093,356.421c-4.16,4.16-9.621,6.251-15.083,6.251
+            c-5.461,0-10.923-2.091-15.083-6.251l-70.251-70.251l-70.251,70.251c-4.16,4.16-9.621,6.251-15.083,6.251
+            c-5.461,0-10.923-2.091-15.083-6.251c-8.341-8.341-8.341-21.824,0-30.165l70.251-70.251l-70.251-70.251
+            c-8.341-8.341-8.341-21.824,0-30.165s21.824-8.341,30.165,0l70.251,70.251l70.251-70.251c8.341-8.341,21.824-8.341,30.165,0
+            s8.341,21.824,0,30.165l-70.251,70.251l70.253,70.251C407.434,334.597,407.434,348.08,399.093,356.421z"
+          />
+        </svg>
+      </div>
+    </div>
+
+    <div class="suggestions__container">
+      <div
+        #suggestionsContainer
+        class="suggestions-wrapper fl-6"
+        [style.transform]="
+          'translateY(' + suggestionsContainerTranslate + 'vh)'
+        "
+      >
+        <div #suggestion *ngFor="let suggestion of shuffledSuggestions">
+          {{ suggestion }}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="result__container">
+    <div class="fl-3 search__text">
+      {{ searchText }}
+    </div>
+
+    <div class="card__container">
+      <div
+        #cardsContainer
+        class="cards-wrapper"
+        [style.transform]="'translateY(' + cardsContainerTranslate + 'vh)'"
+      >
+        <div
+          #card
+          class="custom-card movie-card shadow-sm"
+          *ngFor="let card of searchResult"
+          (click)="goToVideo(card.id,card.type)"
+        >
+          <img src="{{ card.img }}" alt="Image" loading="lazy" />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

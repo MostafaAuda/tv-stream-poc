@@ -1,0 +1,52 @@
+:host ::ng-deep .subtitles.nsm-dialog {
+  background-color: black;
+  width: 30vw;
+  max-width: 30vw;
+  margin: 0;
+  margin-inline-start: auto;
+  min-height: 100vh;
+
+  .nsm-content {
+    background-color: transparent;
+    margin: 0;
+    box-shadow: unset;
+    padding: 5%;
+    border-radius: unset;
+    height: 100%;
+
+    .nsm-dialog-btn-close {
+      display: none;
+    }
+  }
+}
+
+.subtitles__back {
+
+  svg {
+    height: 5vh;
+  }
+}
+
+.subtitles__container {
+  margin-top: 5vh;
+
+  h5 {
+    margin-bottom: 3vh;
+  }
+
+  .subtitle {
+    transition: transform 0.3s cubic-bezier(0.5, 0, 0.1, 0.7) 0s;
+    margin-bottom: 2vh;
+    padding: 0.4vh 0.5vw;
+    border: 0.2vw solid transparent;
+
+    &.active {
+      color: var(--primary);
+      font-weight: bold;
+    }
+
+    &.focused {
+      border: 0.2vw solid var(--white);
+    } 
+  }
+}
